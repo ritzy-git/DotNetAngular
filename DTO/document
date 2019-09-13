@@ -1,0 +1,3 @@
+dotnet ef dbcontext scaffold "server=localhost;port=3306;user=root;password=Bankuser4!@#;database=HSBank" Pomelo.EntityFrameworkCore.MySql -o DAL -c HSBContext -t AccountDetails -t PaymentDetails -t UserMaster -f
+
+assuming that user is subscribed to card from last 6 months only .
