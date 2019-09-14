@@ -1,0 +1,35 @@
+<div class="container mt-3">
+  <div class="row" style="margin-top: 250px">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="row">
+        <div class="col-6">
+          <label>Transaction Date</label>
+        </div>
+        <div class="col-6">
+          <input readonly [(ngModel)]="transactDate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <label>Account ID</label>
+        </div>
+        <div class="col-6">
+          <input type="text" readonly [(ngModel)]="accntID">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <label>Amount</label>
+        </div>
+        <div class="col-6">
+          <input type="number" min="0" [(ngModel)]="payableAmount">
+        </div>
+      </div>
+      <div class="row mt-2" style="float: right">
+        <button type="button" class="btn btn-primary" (click)="onPay()">PAY</button>
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>

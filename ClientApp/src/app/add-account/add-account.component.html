@@ -1,0 +1,27 @@
+<div class="container mt-3">
+        <div class="row" style="margin-top: 250px">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <div class="row">
+              <div class="col-6">
+                <label> Account Name</label>
+              </div>
+              <div class="col-6">
+                <input type="text" [(ngModel)]="acntName">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label>Monthly Credit Limit</label>
+              </div>
+              <div class="col-6">
+                <input type="number" min="0" [(ngModel)]="montlhyCL">
+              </div>
+            </div>
+            <div class="row mt-2" style="float: right">
+              <button type="button" class="btn btn-primary" (click)="Add()">Add</button>
+            </div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>

@@ -1,0 +1,44 @@
+<div class="container mt-3">
+  <div class="row" style="margin-top: 250px">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="row">
+        <div class="col-6">
+          <label>Start Date</label>
+        </div>
+        <div class="col-6">
+          <input type="date" [(ngModel)]="startDate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <label>End Daate</label>
+        </div>
+        <div class="col-6">
+          <input type="date" [(ngModel)]="endDate">
+        </div>
+      </div>
+      <div class="row mt-2" style="float: right">
+        <button type="button" class="btn btn-primary" (click)="getUser()">Get</button>
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
+<div *ngIf="bestUser" class="row">
+  <!-- <h1>Best Performer for the selected period is:- </h1>{{bestPerformer}} -->
+  <table class="table table-bordered">
+    <thead>
+      <th>Account Id</th>
+      <th>User</th>
+      <th>Percentage of utilization</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userDetails">
+        <td>{{user.accntID}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.percentage}}</td>
+      </tr>
+    </tbody>
+  </table> 
+</div>

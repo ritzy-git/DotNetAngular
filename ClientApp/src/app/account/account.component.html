@@ -1,0 +1,49 @@
+<div *ngIf='!admin' class="container mt-3">
+    <h2>Account Details</h2>
+    <hr />
+    <button type="button" style="float:right" class="btn btn-danger mb-4" (click)="onLogout()"><i
+            class="fa fa-power-off" aria-hidden="true"></i>&nbsp;Logout</button>
+    <!-- <button *ngIf='admin' type="button" class="btn btn-success mr-2" style="float:right" (click)="onAdd()">Add Account</button> -->
+    <table class="table table-bordered">
+        <thead style="text-align: center">
+            <th>Account ID</th>
+            <th>Name</th>
+            <th>Transaction Date</th>
+            <th>Transaction Amount</th>
+            <th>Monthly Credit Limit</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let account of accountDetails">
+                <td>{{account.actID}}</td>
+                <td>{{account.aName}}</td>
+                <td>{{account.transDate | date: 'yyyy/MM/dd'}}</td>
+                <td>{{account.transAmt}}</td>
+                <td>{{account.monthlyCL}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" style="float: right" (click)="makePayment()">Make Payment</button>
+</div>
+
+<div *ngIf='admin' class="container mt-3">
+        <h2>Account Details</h2>
+        <hr />
+        <button type="button" style="float:right" class="btn btn-danger mb-4" (click)="onLogout()"><i
+                class="fa fa-power-off" aria-hidden="true"></i>&nbsp;Logout</button>
+        <button type="button" class="btn btn-success mr-2" style="float:right" (click)="onAdd()">Add Account</button>
+        <button type="button" class="btn btn-warning mr-2" style="float:right" (click)="getBestUser()">Best Performer</button>
+        <table class="table table-bordered">
+            <thead style="text-align: center">
+                <th>Account ID</th>
+                <th>Name</th>
+                <th>Monthly Credit Limit</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let account of accountDetails">
+                    <td>{{account.accountId}}</td>
+                    <td>{{account.name}}</td>
+                    <td>{{account.montlyCl}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
