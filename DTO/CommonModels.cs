@@ -48,5 +48,9 @@ namespace HSBank.DTO
     {
         public int id{get;set;}
     }
-
+    public class Output{
+        public int accntID{get;set;}
+        public string userName{get;set;}
+        public int percentage{get;set;}
+    }
 }

@@ -1,0 +1,6 @@
+CREATE TABLE `AccountDetails` (
+  `AccountID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(100) NOT NULL,
+  `MontlyCL` int(11) DEFAULT NULL,
+  PRIMARY KEY (`AccountID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

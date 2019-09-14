@@ -22,6 +22,17 @@ namespace HSBAccount.Controllers
             objDAL = new DalHSBAccounts();
             code = HttpStatusCode.OK;
         }
+
+        [Route("getAccountdetails")]
+        [HttpGet]
+        public IActionResult Getaccountdets()
+        {
+           response =  objDAL.Get();
+            
+           return StatusCode((int)code,response);
+
+            
+        }
         [Route("getAccounts")]
         [HttpPost]
         public IActionResult Getaccountdets([FromBody]account oid)

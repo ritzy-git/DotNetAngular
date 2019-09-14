@@ -12,12 +12,27 @@ namespace HSBank.DAL
     public class DalHSBAccounts
     {
         readonly HSBContext db;
+        ResponseData response;
         
         public DalHSBAccounts()
         {
             db = new HSBContext();
         }
         
+        public ResponseData Get()
+
+        {
+             var records = db.AccountDetails.ToList();
+                response = new ResponseData();
+                if(records.Count > 0)
+                    response.Data = records;
+                 
+                else 
+                response.Message = CustomMessage.NoData;
+
+                return response;
+             
+        }
         public ResponseData getaccountdetails(account id)
         {
             ResponseData response = new ResponseData();

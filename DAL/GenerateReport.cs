@@ -13,14 +13,15 @@ namespace HSBank.DAL
        readonly string database;
         public GenerateReport()
         {
+            database = Startup.ConnectionString;
             db = new HSBContext();
              
         }
 
-        public ResponseData BestPerformer (BestPerformer obj)
+        public DataSet BestPerformer (BestPerformer obj)
         {
             try{
-                DataSet ds = new DataSet();
+                DataSet ds ;
                 using(var con = new MySqlConnection (database))
                 {
                     con.Open();
@@ -31,11 +32,12 @@ namespace HSBank.DAL
                     cmd.Parameters.AddWithValue("@in_ToDate",obj.startDate);
                     using(MySqlDataAdapter adr = new MySqlDataAdapter())
                     {
+                        ds = new DataSet();
                         adr.SelectCommand = cmd;
                         adr.Fill(ds);
-                        response.Data = ds;
-                        response.Code = (int)HttpStatusCode.OK;
-                        return response;
+                       // response.Data = ds;
+                       // response.Code = (int)HttpStatusCode.OK;
+                        return ds;
                     }
 
 

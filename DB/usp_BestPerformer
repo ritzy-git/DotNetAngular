@@ -1,0 +1,16 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `usp_BestPerformer`(in in_FromDate datetime,in in_ToDate datetime)
+BEGIN
+
+set @monthcount = TIMESTAMPDIFF(MONTH,in_FromDate,in_ToDate) + 1;
+
+select distinct ad.AccountId,ad.Name,(pay.tramt/(@monthcount * ad.MontlyCL))*100 as Percentage from AccountDetails ad join 
+(SELECT AccountId, SUM(TransactionAmount) as tramt
+FROM PaymentDetails 
+WHERE TransactionDate 
+    BETWEEN CAST(@in_FromDate AS DATETIME) 
+    AND CAST(@in_ToDate AS DATETIME) 
+GROUP BY AccountId) pay
+on (ad.AccountId= pay.AccountId) 
+order by Percentage desc;
+
+END

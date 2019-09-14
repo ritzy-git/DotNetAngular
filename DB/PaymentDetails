@@ -1,0 +1,9 @@
+CREATE TABLE `PaymentDetails` (
+  `PID` int(11) NOT NULL AUTO_INCREMENT,
+  `AccountID` int(11) NOT NULL,
+  `TransactionDate` datetime DEFAULT NULL,
+  `TransactionAmount` int(11) DEFAULT NULL,
+  PRIMARY KEY (`PID`),
+  KEY `fk_Acounid_idx` (`AccountID`),
+  CONSTRAINT `fk_Acounid` FOREIGN KEY (`AccountID`) REFERENCES `accountdetails` (`AccountID`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
