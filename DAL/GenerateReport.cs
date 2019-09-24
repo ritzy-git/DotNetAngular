@@ -3,6 +3,7 @@ using HSBank.DTO;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Net;
+using System.Globalization;
 
 namespace HSBank.DAL
 {
@@ -13,8 +14,10 @@ namespace HSBank.DAL
        readonly string database;
         public GenerateReport()
         {
-            database = Startup.ConnectionString;
+            EncryptDecrypt objEncDec = new EncryptDecrypt();
+            database = objEncDec.Decryptdata(Startup.ConnectionString);
             db = new HSBContext();
+
              
         }
 
@@ -28,8 +31,10 @@ namespace HSBank.DAL
                     MySqlCommand cmd = new MySqlCommand("usp_BestPerformer",con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Connection = con ;
-                    cmd.Parameters.AddWithValue("@in_FromDate",obj.startDate);
-                    cmd.Parameters.AddWithValue("@in_ToDate",obj.startDate);
+                    
+
+                    cmd.Parameters.AddWithValue("@in_FromDate",obj.startDate.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@in_ToDate",obj.endDate.ToString("yyyy-MM-dd"));
                     using(MySqlDataAdapter adr = new MySqlDataAdapter())
                     {
                         ds = new DataSet();
@@ -47,7 +52,7 @@ namespace HSBank.DAL
             {
                 throw ex;
             }
-        }
+        } 
 
     }
 }

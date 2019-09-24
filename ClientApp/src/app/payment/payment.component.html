@@ -23,7 +23,7 @@
           <label>Amount</label>
         </div>
         <div class="col-6">
-          <input type="number" min="0" [(ngModel)]="payableAmount">
+          <input type="number" min="0" onkeypress="if(event.charCode==45)return false" [(ngModel)]="payableAmount">
         </div>
       </div>
       <div class="row mt-2" style="float: right">

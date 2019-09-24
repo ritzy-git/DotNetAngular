@@ -16,12 +16,14 @@ namespace HSBank.DAL
         public DalHSBLogin()
         {
             db = new HSBContext();
+           
         }
         
         
         
         public ResponseData ValidateUser(Login user)
         {
+             EncryptDecrypt objEncDec = new EncryptDecrypt();
             try{
                 ResponseData response = new ResponseData();
                 AccountDetails act = new AccountDetails();
@@ -29,8 +31,6 @@ namespace HSBank.DAL
                 LoginOutput output = new LoginOutput();
                 if(result != null)
                 {
-
-
                     output.status = "True";
                     IQueryable<AccountDetails> output1 = db.AccountDetails.Where(x => x.Name == user.username);
                      output.AccountId = output1.Select(x => x.AccountId).FirstOrDefault();

@@ -13,7 +13,7 @@ export class AddAccountComponent implements OnInit {
   montlhyCL: any;
   obj: any;
 
-  constructor(private service: DataService,private route: Router) { }
+  constructor(private service: DataService, private route: Router) { }
 
   ngOnInit() {
   }
@@ -24,10 +24,18 @@ export class AddAccountComponent implements OnInit {
       MontlyCl: this.montlhyCL
     }
     this.service.addUser(this.obj).subscribe((response) => {
-      alert(response.message);
-      this.route.navigateByUrl('/account-details');
+      if (response.message === 'Account Name already exists.') {
+        alert(response.message);
+      } else if(response.message==='Minimum amount should be greater than 0.'){
+        alert(response.message);
+      } else {
+        this.route.navigateByUrl('/account-details');
+      }
     }, (error) => {
       alert(error.message);
     })
+  }
+  onBack() {
+    this.route.navigateByUrl('/account-details');
   }
 }

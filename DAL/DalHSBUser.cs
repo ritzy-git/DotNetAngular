@@ -15,6 +15,8 @@ namespace HSBank.DAL
         ResponseData response;
         public DalHSBUser()
         {
+    
+            
             db = new HSBContext();
         }
         public ResponseData getusers()
@@ -36,8 +38,11 @@ namespace HSBank.DAL
         }
         public string AddUser(UserMaster user)
         {
+            EncryptDecrypt objEncDec = new EncryptDecrypt();
             try
             {
+               user.Password =  objEncDec.EncryptData(user.Password);
+               user.UserId = 0;
                 db.UserMaster.Add(user);
                 db.SaveChanges();
                 return CustomMessage.DataSaved;

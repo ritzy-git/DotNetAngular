@@ -76,6 +76,20 @@ namespace HSBank.DAL
         {
             ResponseData response = new ResponseData();
             try{
+                var validation = db.AccountDetails.Where(x => x.Name.ToLower() == act.Name.ToLower());
+                if(validation.Count() > 0)
+                {
+                    response.Message = CustomMessage.SameAct;
+                    response.Code = (int)HttpStatusCode.BadRequest;
+                    return response;
+                }
+                if(act.MontlyCl==0)
+                {
+
+                    response.Message = CustomMessage.MinAmt;
+                    response.Code = (int)HttpStatusCode.BadRequest;
+                    return response;
+                }
                 db.AccountDetails.Add(act);
                 db.SaveChanges();
                  response.Message = CustomMessage.DataSaved;

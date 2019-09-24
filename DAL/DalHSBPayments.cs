@@ -39,7 +39,13 @@ namespace HSBank.DAL
         {
             try{
                  response = new ResponseData();
-                     
+            if(payment.TransactionAmount==0)
+                {
+
+                    response.Message = CustomMessage.MinAmt;
+                    response.Code = (int)HttpStatusCode.BadRequest;
+                    return response;
+                }
                 AccountDetails act ;
                act =  db.AccountDetails.Find(payment.AccountId);
               int currentMonth = DateTime.Now.Month;

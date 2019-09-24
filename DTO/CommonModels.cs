@@ -21,12 +21,14 @@ namespace HSBank.DTO
         public static string InternalServerError = "Internal Server Error.Please Contact Administrator";
 
 
-        public static string InvalidCreds = "Invalid Credentials";
-        public static string NoData = "No record(s) found";
-        public static string DataSaved = " record(s) saved successfully";
-        public static string DataDeleted = "Record deleted successfully";
-        public static string NoBalance = "Transaction cannot be processed, insufficient credit balance";
+        public static string InvalidCreds = "Invalid Credentials.";
+        public static string NoData = "No record(s) found.";
+        public static string DataSaved = " record(s) saved successfully.";
+        public static string DataDeleted = "Record deleted successfully.";
+        public static string NoBalance = "Transaction cannot be processed, insufficient credit balance.";
         public static string Paid = "Paid Successfully!";
+        public static string SameAct = "Account Name already exists.";
+        public static string MinAmt = "Minimum amount should be greater than 0.";
 
     }
     public class BestPerformer

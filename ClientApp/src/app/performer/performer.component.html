@@ -1,7 +1,7 @@
 <div class="container mt-3">
-  <div class="row" style="margin-top: 250px">
+  <div class="row" >
     <div class="col-4"></div>
-    <div class="col-4">
+    <div class="col-4" style="margin-top: 250px">
       <div class="row">
         <div class="col-6">
           <label>Start Date</label>
@@ -12,7 +12,7 @@
       </div>
       <div class="row">
         <div class="col-6">
-          <label>End Daate</label>
+          <label>End Date</label>
         </div>
         <div class="col-6">
           <input type="date" [(ngModel)]="endDate">
@@ -22,10 +22,12 @@
         <button type="button" class="btn btn-primary" (click)="getUser()">Get</button>
       </div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-4">
+        <button type="button" class="btn btn-danger mt-5" style="float: right" (click)="onBack()">Back</button>
+    </div>
   </div>
 </div>
-<div *ngIf="bestUser" class="row">
+<div *ngIf="bestUser" class="row mt-3">
   <!-- <h1>Best Performer for the selected period is:- </h1>{{bestPerformer}} -->
   <table class="table table-bordered">
     <thead>

@@ -14,7 +14,7 @@ import { PerformerComponent } from './performer/performer.component';
       { path: 'account-details', component: AccountComponent },
       { path: 'make-payment', component: PaymentComponent },
       { path: 'addAccount', component: AddAccountComponent },
-      { path: 'getBestPerformer', component: PerformerComponent },
+      { path: 'best-performer', component: PerformerComponent },
       { path: '', component: UserloginComponent, pathMatch: "full" }
     ]),
     CommonModule

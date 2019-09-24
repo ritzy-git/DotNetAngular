@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-performer',
@@ -14,7 +15,7 @@ export class PerformerComponent implements OnInit {
   bestUser: boolean;
   // bestPerformer: any;
   userDetails: any;
-  constructor(private service: DataService) { }
+  constructor(private service: DataService, private route: Router) { }
 
   ngOnInit() {
 
@@ -31,5 +32,7 @@ export class PerformerComponent implements OnInit {
       alert(error.message);
     })
   }
-
+  onBack() {
+    this.route.navigateByUrl('/account-details');
+  }
 }

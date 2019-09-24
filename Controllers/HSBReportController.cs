@@ -31,7 +31,7 @@ namespace HSBUser.Controllers
             DataSet dstable =  objReport.BestPerformer(best);   
             if(dstable != null && dstable.Tables.Count>0) {
                 DataTable table ;
-                table = dstable.Tables[1];
+                table = dstable.Tables[0];
                 if(table != null && table.Rows.Count > 0)
                 {
                     foreach(DataRow dr in table.Rows)

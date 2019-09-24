@@ -7,6 +7,7 @@ namespace HSBank.DAL
 {
     public partial class HSBContext : DbContext
     {
+        EncryptDecrypt objEncDec = new EncryptDecrypt();
         public HSBContext()
         {
         }
@@ -14,6 +15,8 @@ namespace HSBank.DAL
         public HSBContext (string _con)
         {
             ConnectionString = _con;
+             
+            
         }
         public HSBContext(DbContextOptions<HSBContext> options)
             : base(options)
@@ -29,7 +32,7 @@ namespace HSBank.DAL
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql(Startup.ConnectionString);
+                optionsBuilder.UseMySql(objEncDec.Decryptdata(Startup.ConnectionString));
             }
         }
 

@@ -70,11 +70,7 @@ Admin user must always be created with the username as __Admin__
     Password : <b>Admin</b>
 </pre>
 
-- __Account Holder__
-<pre>
-    Username : 
-    Password : 
-</pre>
+
 
 
 

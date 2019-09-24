@@ -12160,11 +12160,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/macbug/project/Rizwana/Test/HSBank/HSBank.csproj",
+      "projectUniqueName": "/Users/macbug/Desktop/HSTest/DotNetAngular/HSBank.csproj",
       "projectName": "HSBank",
-      "projectPath": "/Users/macbug/project/Rizwana/Test/HSBank/HSBank.csproj",
+      "projectPath": "/Users/macbug/Desktop/HSTest/DotNetAngular/HSBank.csproj",
       "packagesPath": "/Users/macbug/.nuget/packages/",
-      "outputPath": "/Users/macbug/project/Rizwana/Test/HSBank/obj/",
+      "outputPath": "/Users/macbug/Desktop/HSTest/DotNetAngular/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

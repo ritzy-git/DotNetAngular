@@ -39,8 +39,11 @@ export class PaymentComponent implements OnInit {
     }
     // alert(JSON.stringify('Paid Successfull'));
     this.service.makePayment(this.obj).subscribe((response) => {
-      alert(response.message);
-      this.route.navigateByUrl('/account-details');
+      if (response.message === 'Minimum amount should be greater than 0.') {
+        alert(response.message);
+      } else {
+        this.route.navigateByUrl('/account-details');
+      }
     }, (error) => {
       alert(error.message);
     })

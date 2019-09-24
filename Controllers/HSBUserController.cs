@@ -35,6 +35,7 @@ namespace HSBUser.Controllers
         [HttpPost]
         public string AddUserDetails([FromBody]UserMaster user)
         {
+            response = new ResponseData();
             response.Message =  objDAL.AddUser(user);
             return response.Message;
         }

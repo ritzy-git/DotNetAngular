@@ -7,8 +7,8 @@ select distinct ad.AccountId,ad.Name,(pay.tramt/(@monthcount * ad.MontlyCL))*100
 (SELECT AccountId, SUM(TransactionAmount) as tramt
 FROM PaymentDetails 
 WHERE TransactionDate 
-    BETWEEN CAST(@in_FromDate AS DATETIME) 
-    AND CAST(@in_ToDate AS DATETIME) 
+    BETWEEN CAST(in_FromDate AS DATETIME) 
+    AND CAST(in_ToDate AS DATETIME) 
 GROUP BY AccountId) pay
 on (ad.AccountId= pay.AccountId) 
 order by Percentage desc;

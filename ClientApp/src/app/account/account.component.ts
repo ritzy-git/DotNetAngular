@@ -44,6 +44,6 @@ export class AccountComponent implements OnInit {
     this.route.navigateByUrl('/addAccount');
   }
   getBestUser() {
-    this.route.navigateByUrl('/getBestPerformer');
+    this.route.navigateByUrl('/best-performer');
   }
 }
