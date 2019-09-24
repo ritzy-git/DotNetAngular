@@ -51,9 +51,9 @@ The connection string is in encrypted format in __appsettings.Development.json__
 Username and Password to Database are assumed to be,
 - All db scripts are in DB folder
 <pre>
-    Username : root
-    Password : Bankuser123
-    Database Name : HSBank
+    Username : __root__
+    Password : __Bankuser123__
+    Database Name : __HSBank__
 </pre>
 
 
