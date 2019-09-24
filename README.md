@@ -21,40 +21,66 @@ This creates a template with server-side implementation and client-side implemen
 
 The above command generates a template for both server side implementation (C#) and client side implementation (Angular 6.0)
 
-### Download all the necessary libraries using 
+## Download all the necessary libraries using 
 ~~~
 dotnet restore
 ~~~
 
-### Build the project using
+## Build the project using
 ~~~
 dotnet build
 ~~~
 
-### Run the project using 
-~~~
-dotnet run
-~~~
+## To run the Project, 
+### Open the project in Visual Studio Code and click 
+#### From Menu Bar, 
+    Debug > Start Debugging
+
+### Using Shortcut press, 
+- Windows
+<pre>Control+F5</pre>
+- Mac
+<pre>Command+F5</pre>
+
 
 
 ## DB Configuration
 
 The application expects to find the MySQL instance to be on __localhost__, with port __3306__.
-You can change the server address in the __appsettings.Development.json__.
+The connection string is in encrypted format in __appsettings.Development.json__.
+Username and Password to Database are assumed to be,
 - All db scripts are in DB folder
-
 <pre>
-
- "ConnectionString": {
-    "DB": "server=<b>localhost</b>;port=<b>3306</b>;user=root;password=Bankuser123;database=HSBank"
-}
+Username : root
+Password : Bankuser123
+Database Name : HSBank
 </pre>
 
 
- 
+
+
+## Login Credentials
+
+Admin user must always be created with the username as __Admin__
+
+- __Admin__
+
+<pre>
+    Username : <b>Admin</b>
+    Password : <b>Admin</b>
+</pre>
+
+- __Account Holder__
+<pre>
+    Username : 
+    Password : 
+</pre>
+
+
+
 ## Project Assumptions
 
-- A registration page and forgot password is already provided for new user registration and change of password
+- A registration page and forgot password page is already provided for new user registration and change of password
 - MySQL server is used as RDBMS. The user __root__ is provided and its password is __Bankuser123__ to access it.
 - AccountId in Accounts table is not alpha-numeric (ex. ICICI1234567890) however a simple integer value (ex. 1).
 - All users have subscribed within last 6 months only.
